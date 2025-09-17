@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Persegi Panjang</title>
+</head>
+<body>
+  <h1>Hitung Persegi Panjang</h1>
+  <form>
+    Panjang: <input type="number" id="panjang"><br><br>
+    Lebar: <input type="number" id="lebar"><br><br>
+    <button type="button" onclick="hitung()">Hitung</button>
+  </form>
+  <p id="hasil"></p>
+
+  <script>
+    function hitung() {
+      let p = parseFloat(document.getElementById('panjang').value);
+      let l = parseFloat(document.getElementById('lebar').value);
+      if (p > 0 && l > 0) {
+        let luas = p * l;
+        let keliling = 2 * (p + l);
+        document.getElementById('hasil').innerHTML =
+          "Luas = " + luas + " cm²<br>Keliling = " + keliling + " cm";
+      } else {
+        document.getElementById('hasil').innerHTML = "Masukkan angka yang benar.";
+      }
+    }
+  </script>
+</body>
+</html>
